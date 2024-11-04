@@ -9,4 +9,6 @@ const connectDb = async()=>{
         process.exit(1);//termiante the process immediatly , 0 success , 1 fail
     }
 }
+console.log("Connection String:", process.env.CONNECTION_STRING);
+
 module.exports = connectDb;
