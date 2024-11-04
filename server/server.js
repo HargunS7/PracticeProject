@@ -4,6 +4,8 @@ const errorHandler = require("./middlewares/errorHandler");
 const cors= require("cors");
 const hbs = require("hbs");
 const path = require("path");
+const doctorsDetails = require("./routes/doctorsDetails");
+
 
 const users = [
     { name: "Harman Dhiman", age: 20 },
@@ -11,11 +13,10 @@ const users = [
     { name: "Jaikirat", age: 20 },
 ];
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 3000 || 5000;
 const dotenv = require("dotenv");
  dotenv.config();
  connectDb();
-
 app.use(express.json());
 app.use(cors());
 app.get('/' , (req , res)=>{
@@ -38,6 +39,8 @@ app.get("/alluser", (req, res) => {
 });
 //register route
 app.use("/api/register" , require("./routes/userRoutes"));
+app.use("/api/doctors", doctorsDetails);
 app.listen(port , ()=>{
-    console.log(`server running on http://localhost:${port}`);
-})
+    console.log(`Server running on http://localhost:${port}`);
+
+});
