@@ -8,7 +8,13 @@
 <body>
     {{> header}}
 
-    <h1>arjan arjan eko a rkaane</h1>
+    <h1>home.hbs</h1>
     {{username}}
+    <div>
+        <form action="/profile" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar"/>
+        <input type="submit" value=" upload">
+        </form>
+    </div>
 </body>
 </html>
