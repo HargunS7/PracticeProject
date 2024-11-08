@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const users = [
-    { name: "Harman Dhiman", age: 20 },
+    { name: "Hargun Singh", age: 20 },
     { name: "Hindveer", age: 19 },
     { name: "Jaikirat", age: 20 },
 ];
@@ -36,7 +36,7 @@ app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
 app.get("/home",(req , res)=>{
     res.render("home" , {
-       username:" Harman Dhiman",
+       username:" Hargun",
        posts : " time pass"
     })
 })
@@ -89,7 +89,7 @@ app.get("/profile",async(req,res)=>{
     let allblog=await Profie.find();
     // console.log(allblog)
     // console.warn("THISHSHSHSH")
-    console.log("chalgya");
+    console.log("working");
     
     res.render("profile",{profile : allblog});
 }) 

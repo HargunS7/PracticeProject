@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
 <body>
-    {{> header}}
+{{> header}}
 
-    <h1>home.hbs</h1>
-    {{username}}
-    <div>
-        <form action="/profile" method="post" enctype="multipart/form-data">
-        <input type="file" name="avatar"/>
-        <input type="submit" value=" upload">
-        </form>
-    </div>
+<h1>File Uploads</h1>
+{{username}}
+<div>
+<form action="/profile" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="">
+<input type="file" name="avatar"/>
+        <button>upload</button>
+        {{!-- <input type="submit" value="Upload"> --}}
+        {{!-- <button>upload</button> --}}
+</form>
+</div>
 </body>
-</html>
