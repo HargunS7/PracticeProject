@@ -1,17 +1,24 @@
 const express = require("express");
-const authMiddleware = require("../middlewares/jwtMiddleware"); // Check if you need this in any routes
+//  const { validateJwtToken } = require("../server.js");
+const User = require("../model/userModel");
+const myAccount = async(req, res)=>{
+    const {email} = req.body;
+    const user = await User.findOne({ email
+
+     });
+    if(user){
+        res.send(user);
+    }
+
+}
 const router = express.Router();
 const {
-  registerUser,
-  loginUser
+    registerUser,
+    loginUser
 } = require("../controllers/userController");
+const { validateJwtToken } = require("../middlewares/jwtMiddleware");
 
-// Route for user registration
 router.post("/register", registerUser);
-
-// Route for user login (choose whether authMiddleware is required)
-router.post("/login", loginUser); // Without auth
-// or
-// router.post("/login", authMiddleware, loginUser); // With auth if required
-
+router.post("/login", loginUser);
+router.get("/details" , myAccount , validateJwtToken);
 module.exports = router;

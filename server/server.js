@@ -108,6 +108,8 @@ res.render("profile",{profile : allblog});
 //     }
 // });
 
+
+
 //register route
 app.use("/api/register" , require("./routes/userRoutes"));
 app.use("/api/doctors", doctorsDetails);
