@@ -21,7 +21,8 @@ const users = [
 { name: "Jaikirat", age: 20 },
 ];
 
-const port = 3000 || 5000;
+const port = 3001 || 5000;
+
 const dotenv = require("dotenv");
 dotenv.config();
 connectDb();
